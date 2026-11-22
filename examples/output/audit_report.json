@@ -1,0 +1,101 @@
+{
+  "generated_at": "2026-11-22T18:35:04+00:00",
+  "dataset": {
+    "items": 60,
+    "annotations": 120,
+    "annotators": 4,
+    "gold_labels": 60,
+    "source": "synthetic demo batch (data/generate_synthetic.py)"
+  },
+  "agreement": {
+    "krippendorff_alpha_nominal": 0.752,
+    "fleiss_kappa": 0.75
+  },
+  "overall_gold_accuracy": 0.917,
+  "annotator_audits": [
+    {
+      "annotator": "ann_karim",
+      "gold_items": 30,
+      "accuracy": 0.967,
+      "confusions": {
+        "violating -> sensitive": 1
+      },
+      "flagged": false,
+      "flag_reasons": []
+    },
+    {
+      "annotator": "ann_laila",
+      "gold_items": 30,
+      "accuracy": 0.933,
+      "confusions": {
+        "safe -> violating": 1,
+        "sensitive -> violating": 1
+      },
+      "flagged": false,
+      "flag_reasons": []
+    },
+    {
+      "annotator": "ann_mostafa",
+      "gold_items": 30,
+      "accuracy": 0.767,
+      "confusions": {
+        "sensitive -> safe": 4,
+        "safe -> violating": 1,
+        "safe -> sensitive": 1,
+        "violating -> safe": 1
+      },
+      "flagged": true,
+      "flag_reasons": [
+        "accuracy 76.7% below floor 85%",
+        "recurring confusion sensitive -> safe (4 of 7 errors)"
+      ]
+    },
+    {
+      "annotator": "ann_sara",
+      "gold_items": 30,
+      "accuracy": 1.0,
+      "confusions": {},
+      "flagged": false,
+      "flag_reasons": []
+    }
+  ],
+  "pii_hits": [
+    {
+      "item_id": "item-sensitive-10",
+      "kind": "credit_card",
+      "value": "4111 1111 1111 1111 "
+    },
+    {
+      "item_id": "item-sensitive-07",
+      "kind": "phone",
+      "value": "0120 555 1234"
+    },
+    {
+      "item_id": "item-sensitive-03",
+      "kind": "email",
+      "value": "mona.example@mail.com"
+    },
+    {
+      "item_id": "item-sensitive-14",
+      "kind": "egyptian_national_id",
+      "value": "29012011234567"
+    }
+  ],
+  "recommended_audit_sample": [
+    "item-safe-04",
+    "item-safe-06",
+    "item-safe-08",
+    "item-safe-11",
+    "item-safe-13",
+    "item-safe-14",
+    "item-safe-15",
+    "item-safe-17",
+    "item-sensitive-04",
+    "item-sensitive-05",
+    "item-sensitive-06",
+    "item-sensitive-12",
+    "item-sensitive-20",
+    "item-violating-03",
+    "item-violating-16"
+  ]
+}
